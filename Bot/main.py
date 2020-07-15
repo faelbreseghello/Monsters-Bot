@@ -99,6 +99,7 @@ class Bot(discord.Client):
             # checks if the player profile already exists
             try:
                 data = playersinfo[f'{user.id}']
+                del data
             except:
                 playersinfo[f'{user.id}'] = Profile(user.id)
 
