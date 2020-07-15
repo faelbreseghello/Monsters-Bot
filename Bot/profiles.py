@@ -1,10 +1,9 @@
 import discord
 
-
 class Profile():
 
-    def __init__(self, user : discord.Member): # Creates a profile object, that stores info about the minigame
-        self.id = user # the discord member object
+    def __init__(self, user : int): # Creates a profile object, that stores users info about the minigame
+        self.id = user # discord user id
         self.points = 0 # total points  
         self.month_points = 0 # monthly points
 
@@ -17,3 +16,5 @@ class Profile():
 
     def __str__(self): # user and him all-time points
         return f'{self.id} {self.points}'
+    
+
