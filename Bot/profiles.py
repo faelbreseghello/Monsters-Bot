@@ -14,7 +14,12 @@ class Profile():
     def resetmonth(self): # reset month points
         self.month_points = 0
 
-    def __str__(self): # user and him all-time points
+    def __str__(self): # user id and him all-time points
         return f'{self.id} {self.points}'
     
-
+    def __gt__(self, other):
+         return self.month_points > other.month_points
+    
+    def __lt__(self, other):
+        return self.month_points < other.month_points
+        
