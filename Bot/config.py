@@ -7,7 +7,7 @@ Token = open('../Token.txt', 'r') # The token of the bot
 
 prefix = '*' # the command prefix
 
-lang = 'pt-br' # 'en-us' or 'pt-br'
+lang = 'en-us' # 'en-us' or 'pt-br'
 
 memes = os.listdir('../Assets/monsters_memes') # memes db load
 
@@ -27,8 +27,8 @@ except:
 
 # Language import
 if lang == 'en-us':
-    from en_us_quotes import *
+    from en_us import *
 elif lang == 'pt-br':
-    from pt_br_quotes import *
+    from pt_br import *
 else:
     raise Exception(f'There are no lang option called {lang}')

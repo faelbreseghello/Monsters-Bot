@@ -44,3 +44,18 @@ quotes = ["Mais nada vai sair do armário pra assustar você",
 
 "Você é o chefe, você é o grande chefe peludo.",
 ]
+
+
+# var name == command name
+close = 'Tchau monstros! Até mais...🧟‍♂️😞'
+policy = 'Meu compromisso é com a transparência e o código aberto, caso queira ver os registros de auditoria/log de mensagem.🧐🧐🧐 \n github repo: https://github.com/faelbreseghello/Monsters-Bot'
+setup = 'Pronto! Em 1 hora o jogo começa!'
+fun = 'Olha essa daqui!:'
+
+# minigame msg
+winmsg1 = 'O membro ' # pt1
+winmsg2 = ' venceu a rodada.' # pt2
+startmsg = 'Assustadores, preparem-se! Chegou a hora de assustar!\n VALENDO!'
+
+# other
+statusmsg = 'Feito com ❤️ por faelbreseghello#3092'
