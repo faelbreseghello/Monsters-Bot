@@ -7,7 +7,7 @@
  
  
  ## Features
- * Very simple code, using [discord.py](https://github.com/Rapptz/discord.py;
+ * Very simple code, using [discord.py](https://github.com/Rapptz/discord.py);
  * A minigame to "claim" messages, that will generate a rank called *no name yet*.  The minigame name is *no name yet* ;
  * Totaly understandable code;
  * logging and some other adminstrative simple commands.
