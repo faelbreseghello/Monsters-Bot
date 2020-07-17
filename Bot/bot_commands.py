@@ -5,6 +5,7 @@ from profiles import Profile
 import shelve
 from copy import deepcopy
 from config import *
+from random import randint, choice
 
 
 class Bot(discord.Client):
@@ -32,7 +33,7 @@ class Bot(discord.Client):
                 playersinfo.close()
 
                 # sending results
-                await gamechannel.send(f'The winner was {self.get_user(winner.id)}, with {winner.month_points} pts')
+                await gamechannel.send(f'The winner was {self.get_user(winner.id)}, with {winner.month_points} pts! 🎉🎉🎉🎉🎉')
                 await gamechannel.send(allstr)
                 
             await asyncio.sleep(84500)
@@ -52,7 +53,8 @@ class Bot(discord.Client):
                 else:
                 # Minigame 
                     await asyncio.sleep(gameinterval)
-                    await gamechannel.send('minigame temp message')
+                    await gamechannel.send(file= discord.File(open(f'../Assets/monsters_memes/{choice(memes)}', 'rb')))
+                    await gamechannel.send('It\'s time to scare! The first to react wins!')
                     valid = True
 
 
@@ -73,23 +75,31 @@ class Bot(discord.Client):
 
         if message.content == f'{prefix}close' and perm.administrator: # close command - end the bot process (only for admins)
             await message.channel.send('Bye monsters! See you soon...🧟‍♂️😞')
+            logfile.close()
             await self.close()
             exit()
 
-        if message.content == f'{prefix}policy': #policy command - our think way
+        if message.content == f'{prefix}policy': # policy command - our think way
             await message.channel.send("""We're a transparent and free4all bot, so at the end of every month, search for the transparency channels and see the audit logs and messages logs.🧐🧐🧐""")
 
         if message.content == f'{prefix}setup' and  perm.administrator: # sets up the minigame - the channel will be where this command was sent
             gamechannel = message.channel
             await message.channel.send('Set up! In one hour the game starts!')
-            
+
+        if message.content == f'{prefix}fun': # fun quotes
+            quote = choice(quotes)
+            await message.channel.send(f'Look at this one!: \n"{quote}"')
+
+        if message.content == f'{prefix}memes':
+            await message.channel.send('LOL!', file=discord.File(open(f'../Assets/monsters_memes/{choice(memes)}', 'rb')))
+
 
     async def on_reaction_add(self, reaction, user):
         global gamechannel 
         global valid # game status
         global winnerPoints
 
-        if reaction.message.channel == gamechannel != None and valid and reaction.message.content == 'minigame temp message': # checks if the reaction is from a valid minigame session
+        if reaction.message.channel == gamechannel != None and valid and reaction.message.content == 'It\'s time to scare! The first to react wins!': # checks if the reaction is from a valid minigame session
             playersinfo = shelve.open('players.info', 'c', writeback=True) # db open
             # finishing the actual open game
             await gamechannel.send(f'The member {user.name} won the challenge.')
