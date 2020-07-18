@@ -44,11 +44,12 @@ class Bot(discord.Client):
         global valid # The stats of game
         global gameinterval
         while True:
-            # TEMP TEST
+            # Scare Floor
             if gamechannel == None:
                 await asyncio.sleep(10)
             else:
-                if valid:
+                chance = randint(0,5)
+                if valid or chance != 1:
                     await asyncio.sleep(gameinterval) # if the game keeps valid
                 else:
                 # Minigame 

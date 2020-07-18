@@ -54,7 +54,7 @@ fun = 'Olha essa daqui!:'
 
 # minigame msg
 winmsg1 = 'O membro ' # pt1
-winmsg2 = ' venceu a rodada.' # pt2
+winmsg2 = ' venceu a rodada.\n -------------------------------' # pt2
 startmsg = 'Assustadores, preparem-se! Chegou a hora de assustar!\n VALENDO!'
 
 # other
