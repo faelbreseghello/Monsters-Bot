@@ -142,3 +142,4 @@ startmsg = 'It\'s time to scare! The first to react wins!'
 
 # other
 statusmsg = 'Made with ❤️ by faelbreseghello#3092'
+welcomemsg = 'Welcome! I\' the Monsters Bot. If you want to know more about me go on my github repo : https://github.com/faelbreseghello/Monsters-Bot.\nMy minigame rules are simple. Be the first to scare and earn points. Then be the best monster and win!🧟‍♂️🧟‍♂️🧟‍♂️🧟‍♂️'

@@ -59,3 +59,4 @@ startmsg = 'Assustadores, preparem-se! Chegou a hora de assustar!\n VALENDO!'
 
 # other
 statusmsg = 'Feito com ❤️ por faelbreseghello#3092'
+welcomemsg = 'Bem vindo ao server, eu sou o Monsters Bot. Se quiser saber mais sobre mim acesse meu repositorio no github : https://github.com/faelbreseghello/Monsters-Bot.\n As regras do minigame são simples: Seja o primeiro assustador e ganhe pontos. Depois tente ser o melhor de todos! 🧟‍♂️🧟‍♂️🧟‍♂️🧟‍♂️'

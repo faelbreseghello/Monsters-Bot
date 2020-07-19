@@ -66,9 +66,11 @@ class Bot(discord.Client):
 
     async def on_message(self, message):
         global gamechannel
-
-        perm = message.author.guild_permissions # author permissions
-
+        try:
+            perm = message.author.guild_permissions # author permissions
+        except:
+            pass
+        
         # log message that will be stored in a file, and printed in console
         log = f'[{datetime.datetime.now()}]Message from {message.author}: "{message.content}"'
         logfile.write(log + '\n')
@@ -116,3 +118,12 @@ class Bot(discord.Client):
             # point computation    
             playersinfo[f'{user.id}'].addPoint(winnerPoints)
             playersinfo.close() # db close
+
+    
+    async def on_member_join(self, member):
+        print('hello')
+        dm = member.dm_channel
+        if dm == None:
+            await member.create_dm()
+            dm = member.dm_channel
+        await dm.send(welcomemsg)
