@@ -139,7 +139,10 @@ fun = 'Look at this one!:'
 winmsg1 = 'The member ' # pt1
 winmsg2 = ' won the challenge\n -------------------------------' # pt2
 startmsg = 'It\'s time to scare! The first to react wins!'
+mypts = 'You have '
+myptserror = 'Probably you dont started at the game yet :('
 
 # other
 statusmsg = 'Made with ❤️ by faelbreseghello#3092'
 welcomemsg = 'Welcome! I\' the Monsters Bot. If you want to know more about me go on my github repo : https://github.com/faelbreseghello/Monsters-Bot.\nMy minigame rules are simple. Be the first to scare and earn points. Then be the best monster and win!🧟‍♂️🧟‍♂️🧟‍♂️🧟‍♂️'
+month = 'monthly'

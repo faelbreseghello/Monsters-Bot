@@ -95,6 +95,22 @@ class Bot(discord.Client):
 
         if message.content == f'{prefix}memes': # memes
             await message.channel.send('LOL!', file=discord.File(open(f'../Assets/monsters_memes/{choice(memes)}', 'rb')))
+        
+        if message.content == f'{prefix}mypts': # Dm message for points
+            playersinfo = shelve.open('players.info', 'c') # db open
+            # dm validation
+            dm = message.author.dm_channel 
+            if dm == None:
+                await message.author.create_dm()
+                dm = message.author.dm_channel
+            # message sending
+            try:
+                await dm.send(f'{mypts}\n total:{playersinfo[str(message.author.id)].points}, {month}:{playersinfo[str(message.author.id)].month_points} pts')
+            except Exception as e:
+                print(e)
+                await dm.send(myptserror)
+            playersinfo.close()
+
 
 
     async def on_reaction_add(self, reaction, user):
@@ -121,7 +137,6 @@ class Bot(discord.Client):
 
     
     async def on_member_join(self, member):
-        print('hello')
         dm = member.dm_channel
         if dm == None:
             await member.create_dm()

@@ -56,7 +56,10 @@ fun = 'Olha essa daqui!:'
 winmsg1 = 'O membro ' # pt1
 winmsg2 = ' venceu a rodada.\n -------------------------------' # pt2
 startmsg = 'Assustadores, preparem-se! Chegou a hora de assustar!\n VALENDO!'
+mypts = 'Você tem '
+myptserror = 'Provavelmente não iniciou o jogo ainda :('
 
 # other
 statusmsg = 'Feito com ❤️ por faelbreseghello#3092'
 welcomemsg = 'Bem vindo ao server, eu sou o Monsters Bot. Se quiser saber mais sobre mim acesse meu repositorio no github : https://github.com/faelbreseghello/Monsters-Bot.\n As regras do minigame são simples: Seja o primeiro assustador e ganhe pontos. Depois tente ser o melhor de todos! 🧟‍♂️🧟‍♂️🧟‍♂️🧟‍♂️'
+month = 'mês'
