@@ -58,6 +58,16 @@ winmsg2 = ' venceu a rodada.\n -------------------------------' # pt2
 startmsg = 'Assustadores, preparem-se! Chegou a hora de assustar!\n VALENDO!'
 mypts = 'Você tem '
 myptserror = 'Provavelmente não iniciou o jogo ainda :('
+helpmsg = """   COMANDOS
+policy: Nossa forma de pensar
+setup: ADM ONLY Definir o canal que será utilizado para o minigame. Recomenda-se que apenas o bot possa enviar mensagens por ali
+fun: Pequenos trechos dos monstros conversando. Quem precisa de autoajuda quando se tem monstroterapia
+meme: Um meme aleatório da nossa base MONSTRUOSA 🧟‍♂️🧟‍♂️
+mypts: Uma dm com os seus pontos do minigame :funciona na dm tmb:
+    MINIGAME
+De tempos em tempos há uma chance de ser enviada uma mensagem em que o primeiro monstro que reagir ganha pontos. No final do mês o melhor ganha um super BONUS
+*todos os comandos, por padrão acompanham o prefixo *. Ex: *setup
+"""
 
 # other
 statusmsg = 'Feito com ❤️ por faelbreseghello#3092'

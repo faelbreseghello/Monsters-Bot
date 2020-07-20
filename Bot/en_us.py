@@ -141,6 +141,16 @@ winmsg2 = ' won the challenge\n -------------------------------' # pt2
 startmsg = 'It\'s time to scare! The first to react wins!'
 mypts = 'You have '
 myptserror = 'Probably you dont started at the game yet :('
+helpmsg = """   COMMANDS
+policy: Our monstrous think way
+setup: Sets up the minigame channel. It's recommended that only me can message there
+fun: Some little monsters quotes
+meme: A random meme from our scary database🧟‍♂️🧟‍♂️
+mypts: send a dm to the message author with him points :works on dm:
+    MINIGAME
+From time to time there's a random chance of a message appears. The first monster to react to it will win the round and earn points. At the end of every month the best will receive a prize.
+*all commands need the standard prefix *. but it could be changed
+"""
 
 # other
 statusmsg = 'Made with ❤️ by faelbreseghello#3092'

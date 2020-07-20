@@ -93,7 +93,7 @@ class Bot(discord.Client):
             quote = choice(quotes)
             await message.channel.send(f'{fun} \n"{quote}"')
 
-        if message.content == f'{prefix}memes': # memes
+        if message.content == f'{prefix}meme': # memes
             await message.channel.send('LOL!', file=discord.File(open(f'../Assets/monsters_memes/{choice(memes)}', 'rb')))
         
         if message.content == f'{prefix}mypts': # Dm message for points
@@ -110,7 +110,9 @@ class Bot(discord.Client):
                 print(e)
                 await dm.send(myptserror)
             playersinfo.close()
-
+        
+        if message.content == f'{prefix}help':
+            await message.channel.send(helpmsg)
 
 
     async def on_reaction_add(self, reaction, user):
