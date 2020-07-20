@@ -10,7 +10,8 @@
  * Very simple code, using [discord.py](https://github.com/Rapptz/discord.py);
  * A minigame to "claim" messages, that will generate a rank.  The minigame name is *Scare floor* ;
  * Totaly understandable code;
- * logging and some other adminstrative simple commands.
+ * logging and some other adminstrative simple commands;
+ * fun commands, with some memes and quotes.
  
  ## Self-Hosting
  No stable version available yet. :(
