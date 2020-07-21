@@ -151,6 +151,7 @@ mypts: send a dm to the message author with him points :works on dm:
 From time to time there's a random chance of a message appears. The first monster to react to it will win the round and earn points. At the end of every month the best will receive a prize.
 *all commands need the standard prefix *. but it could be changed
 """
+trakinas = 'SUPPORT, SUPPORT TRAKINAS LEMON.🍪🍪🍪🍪🍪'
 
 # other
 statusmsg = 'Made with ❤️ by faelbreseghello#3092'

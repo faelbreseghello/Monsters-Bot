@@ -113,10 +113,13 @@ class Bot(discord.Client):
                 await dm.send(myptserror)
             playersinfo.close()
         
-        if message.content == f'{prefix}help':
+        if message.content == f'{prefix}trakinas': # Help trakinas limao
+            await message.channel.send(trakinas, file=discord.File(open('../Assets/Trakinas.jpg', 'rb')))
+        
+        if message.content == f'{prefix}help': # help command
             await message.channel.send(helpmsg)
-
-
+        
+        
     async def on_reaction_add(self, reaction, user):
         global gamechannel 
         global valid # game status
@@ -146,3 +149,10 @@ class Bot(discord.Client):
             await member.create_dm()
             dm = member.dm_channel
         await dm.send(welcomemsg)
+    
+    
+    async def on_member_ban(self, guild, user):
+        channels = guild.channels
+        for channel in channels:
+            if str(channel) == banchannel:
+                await channel.send(file=discord.File(open('../Assets/ban.gif', 'rb')))

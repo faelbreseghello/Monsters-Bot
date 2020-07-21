@@ -68,6 +68,7 @@ mypts: Uma dm com os seus pontos do minigame :funciona na dm tmb:
 De tempos em tempos há uma chance de ser enviada uma mensagem em que o primeiro monstro que reagir ganha pontos. No final do mês o melhor ganha um super BONUS
 *todos os comandos, por padrão acompanham o prefixo *. Ex: *setup
 """
+trakinas = 'APOIE, APOIE TRAKINAS LIMÃO.🍪🍪🍪🍪'
 
 # other
 statusmsg = 'Feito com ❤️ por faelbreseghello#3092'

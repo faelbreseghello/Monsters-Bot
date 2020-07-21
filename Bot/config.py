@@ -11,7 +11,7 @@ lang = 'pt-br' # 'en-us' or 'pt-br'
 
 memes = os.listdir('../Assets/monsters_memes') # memes db load
 
-welcomechannel = None
+banchannel = None
 
 # Minigame setup
 gamechannel = None # You can set here or with the command "*setup"
