@@ -49,14 +49,16 @@ class Bot(discord.Client):
                 await asyncio.sleep(10)
             else:
                 chance = randint(0,5)
+                print(chance)
                 if valid or chance != 1:
-                    await asyncio.sleep(gameinterval) # if the game keeps valid
+                    await asyncio.sleep(gameinterval) # if the game keeps valid or not choosen
                 else:
                 # Minigame 
-                    await asyncio.sleep(gameinterval)
                     await gamechannel.send(file= discord.File(open(f'../Assets/monsters_memes/{choice(memes)}', 'rb')))
                     await gamechannel.send(startmsg)
                     valid = True
+                    await asyncio.sleep(gameinterval)
+                    
 
 
     async def on_ready(self):

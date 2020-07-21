@@ -7,7 +7,7 @@ Token = open('../Token.txt', 'r') # The token of the bot
 
 prefix = '*' # the command prefix
 
-lang = 'en-us' # 'en-us' or 'pt-br'
+lang = 'pt-br' # 'en-us' or 'pt-br'
 
 memes = os.listdir('../Assets/monsters_memes') # memes db load
 
@@ -15,7 +15,7 @@ welcomechannel = None
 
 # Minigame setup
 gamechannel = None # You can set here or with the command "*setup"
-gameinterval = 5 #interval between the sessions #TEMP VALUE
+gameinterval = 120 #interval between the sessions #TEMP VALUE
 winnerPoints = 3 # points for who win the minigame
 valid = False # DO NOT edit this
 end_day = 30 # The day of the end off the minigame - will verify at the start time

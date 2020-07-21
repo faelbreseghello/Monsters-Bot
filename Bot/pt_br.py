@@ -49,7 +49,7 @@ quotes = ["Mais nada vai sair do armário pra assustar você",
 # var name == command name
 close = 'Tchau monstros! Até mais...🧟‍♂️😞'
 policy = 'Meu compromisso é com a transparência e o código aberto, caso queira ver os registros de auditoria/log de mensagem.🧐🧐🧐 \n github repo: https://github.com/faelbreseghello/Monsters-Bot'
-setup = 'Pronto! Em 1 hora o jogo começa!'
+setup = 'Pronto! O jogo já vai começar!'
 fun = 'Olha essa daqui!:'
 
 # minigame msg
