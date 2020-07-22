@@ -45,20 +45,22 @@ class Bot(discord.Client):
         global gameinterval
         while True:
             # Scare Floor
-            if gamechannel == None:
-                await asyncio.sleep(10)
-            else:
-                chance = randint(0,5)
-                print(chance)
-                if valid or chance != 1:
-                    await asyncio.sleep(gameinterval) # if the game keeps valid or not choosen
+            try:
+                if gamechannel == None:
+                    await asyncio.sleep(10)
                 else:
-                # Minigame 
-                    await gamechannel.send(file= discord.File(open(f'../Assets/monsters_memes/{choice(memes)}', 'rb')))
-                    await gamechannel.send(startmsg)
-                    valid = True
-                    await asyncio.sleep(gameinterval)
-                    
+                    chance = randint(0,5)
+                    print(chance)
+                    if valid or chance != 1:
+                        await asyncio.sleep(gameinterval) # if the game keeps valid or not choosen
+                    else:
+                    # Minigame 
+                        await gamechannel.send(file= discord.File(open(f'../Assets/monsters_memes/{choice(memes)}', 'rb')))
+                        await gamechannel.send(startmsg)
+                        valid = True
+                        await asyncio.sleep(gameinterval)
+            except:
+                pass
 
 
     async def on_ready(self):
