@@ -49,6 +49,7 @@ class Bot(discord.Client):
                 if gamechannel == None:
                     await asyncio.sleep(10)
                 else:
+                    await self.change_presence(status=discord.Status.online, activity= discord.Game(choice(statusmsg)))
                     chance = randint(0,5)
                     print(chance)
                     if valid or chance != 1:
@@ -65,7 +66,7 @@ class Bot(discord.Client):
 
     async def on_ready(self):
         print(f'Logged on as {self.user} at {datetime.datetime.today()}')
-        await self.change_presence(status=discord.Status.online, activity= discord.Game(statusmsg))
+        await self.change_presence(status=discord.Status.online, activity= discord.Game(choice(statusmsg)))
 
 
     async def on_message(self, message):
