@@ -64,6 +64,7 @@ setup: ADM ONLY Definir o canal que será utilizado para o minigame. Recomenda-s
 fun: Pequenos trechos dos monstros conversando. Quem precisa de autoajuda quando se tem monstroterapia
 meme: Um meme aleatório da nossa base MONSTRUOSA 🧟‍♂️🧟‍♂️
 mypts: Uma dm com os seus pontos do minigame :funciona na dm tmb:
+trakinas: Campanha de caridade :100% sério:
     MINIGAME
 De tempos em tempos há uma chance de ser enviada uma mensagem em que o primeiro monstro que reagir ganha pontos. No final do mês o melhor ganha um super BONUS
 *todos os comandos, por padrão acompanham o prefixo *. Ex: *setup

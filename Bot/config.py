@@ -11,7 +11,7 @@ lang = 'pt-br' # 'en-us' or 'pt-br'
 
 memes = os.listdir('../Assets/monsters_memes') # memes db load
 
-banchannel = None
+banchannel = None # the channel that will be used to ban messages
 
 # Minigame setup
 gamechannel = None # You can set here or with the command "*setup"

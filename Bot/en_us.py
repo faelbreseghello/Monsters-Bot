@@ -147,6 +147,7 @@ setup: Sets up the minigame channel. It's recommended that only me can message t
 fun: Some little monsters quotes
 meme: A random meme from our scary database🧟‍♂️🧟‍♂️
 mypts: send a dm to the message author with him points :works on dm:
+trakinas: a charity campaing
     MINIGAME
 From time to time there's a random chance of a message appears. The first monster to react to it will win the round and earn points. At the end of every month the best will receive a prize.
 *all commands need the standard prefix *. but it could be changed

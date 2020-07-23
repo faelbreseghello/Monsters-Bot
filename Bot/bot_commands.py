@@ -146,14 +146,17 @@ class Bot(discord.Client):
 
     
     async def on_member_join(self, member):
-        dm = member.dm_channel
+        # Welcome msg
+        dm = member.dm_channel # dm verification
         if dm == None:
+            # dm creation
             await member.create_dm()
             dm = member.dm_channel
+        # msg sending
         await dm.send(welcomemsg)
     
     
-    async def on_member_ban(self, guild, user):
+    async def on_member_ban(self, guild, user): # ban message        
         channels = guild.channels
         for channel in channels:
             if str(channel) == banchannel:
