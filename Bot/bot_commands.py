@@ -42,7 +42,7 @@ class Bot(discord.Client):
     async def scheduled(self):
         global gamechannel # The Minigame channel
         global valid # The stats of game
-        global gameinterval
+        global gameinterval # the time between one game session and another
         while True:
             # Scare Floor
             try:
@@ -65,8 +65,18 @@ class Bot(discord.Client):
 
 
     async def on_ready(self):
+        global valid
         print(f'Logged on as {self.user} at {datetime.datetime.today()}')
         await self.change_presence(status=discord.Status.online, activity= discord.Game(choice(statusmsg)))
+        valid = False # do not EDIT this
+
+
+    async def on_disconnect(self):
+        while True:
+            await self.start(Token)
+            if not self.is_closed():
+                return
+        
 
 
     async def on_message(self, message):
