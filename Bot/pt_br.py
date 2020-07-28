@@ -48,12 +48,12 @@ quotes = ["Mais nada vai sair do armário pra assustar você",
 
 # var name == command name
 close = 'Tchau monstros! Até mais...🧟‍♂️😞'
-policy = 'Meu compromisso é com a transparência e o código aberto, caso queira ver os registros de auditoria/log de mensagem.🧐🧐🧐 \n github repo: https://github.com/faelbreseghello/Monsters-Bot'
+policy = 'Meu compromisso é com a transparência e o código aberto, caso queira ver os registros de auditoria/log de mensagem é só ir no respectivo canal que você o verá.🧐🧐🧐 \n github repo: https://github.com/faelbreseghello/Monsters-Bot'
 setup = 'Pronto! O jogo já vai começar!'
 fun = 'Olha essa daqui!:'
 
 # minigame msg
-winmsg1 = 'O membro ' # pt1
+winmsg1 = 'O monstro ' # pt1
 winmsg2 = ' venceu a rodada.\n -------------------------------' # pt2
 startmsg = 'Assustadores, preparem-se! Chegou a hora de assustar!\n VALENDO!'
 mypts = 'Você tem '

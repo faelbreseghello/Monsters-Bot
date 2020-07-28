@@ -136,7 +136,7 @@ fun = 'Look at this one!:'
 
 
 # minigame msg
-winmsg1 = 'The member ' # pt1
+winmsg1 = 'The monster ' # pt1
 winmsg2 = ' won the challenge\n -------------------------------' # pt2
 startmsg = 'It\'s time to scare! The first to react wins!'
 mypts = 'You have '
