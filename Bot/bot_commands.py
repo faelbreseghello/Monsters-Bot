@@ -73,7 +73,7 @@ class Bot(discord.Client):
 
     async def on_disconnect(self):
         while True:
-            await self.start(Token.read())
+            await self.start(Token)
             if not self.is_closed():
                 return
         

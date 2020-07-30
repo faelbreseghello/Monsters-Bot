@@ -4,6 +4,7 @@ import os
 
 # General
 Token = open('../Token.txt', 'r') # The token of the bot
+Token = Token.read()
 
 prefix = '*' # the command prefix
 
