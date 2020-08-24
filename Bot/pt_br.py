@@ -51,6 +51,7 @@ close = 'Tchau monstros! Até mais...🧟‍♂️😞'
 policy = 'Meu compromisso é com a transparência e o código aberto, caso queira ver os registros de auditoria/log de mensagem é só ir no respectivo canal que você o verá.🧐🧐🧐 \n github repo: https://github.com/faelbreseghello/Monsters-Bot'
 setup = 'Pronto! O jogo já vai começar!'
 fun = 'Olha essa daqui!:'
+trakinas = 'APOIE, APOIE TRAKINAS LIMÃO.🍪🍪🍪🍪'
 
 # minigame msg
 winmsg1 = 'O monstro ' # pt1
@@ -69,7 +70,7 @@ trakinas: Campanha de caridade :100% sério:
 De tempos em tempos há uma chance de ser enviada uma mensagem em que o primeiro monstro que reagir ganha pontos. No final do mês o melhor ganha um super BONUS
 *todos os comandos, por padrão acompanham o prefixo *. Ex: *setup
 """
-trakinas = 'APOIE, APOIE TRAKINAS LIMÃO.🍪🍪🍪🍪'
+react = ' Reaja com'
 
 # other
 statusmsg = ['Feito com ❤️ por faelbreseghello#3092', 'Me siga no twitter: @faelbreseghello', 'Meu código é aberto!', 'Veja os comandos com *help...']

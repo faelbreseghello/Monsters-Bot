@@ -43,6 +43,8 @@ class Bot(discord.Client):
         global gamechannel # The Minigame channel
         global valid # The stats of game
         global gameinterval # the time between one game session and another
+        global color
+
         while True:
             # Scare Floor
             try:
@@ -56,8 +58,10 @@ class Bot(discord.Client):
                         await asyncio.sleep(gameinterval) # if the game keeps valid or not choosen
                     else:
                     # Minigame 
+                        color = choice(list(emojis.keys()))
                         await gamechannel.send(file= discord.File(open(f'../Assets/monsters_memes/{choice(memes)}', 'rb')))
-                        await gamechannel.send(startmsg)
+
+                        await gamechannel.send(startmsg + react + f' {color}' + '.')
                         valid = True
                         await asyncio.sleep(gameinterval)
             except:
@@ -98,6 +102,7 @@ class Bot(discord.Client):
         logfile.write(log + '\n')
         print(log)
 
+        # COMMANDS
         if message.content == f'{prefix}close' and perm.administrator: # close command - end the bot process (only for admins)
             await message.channel.send(close)
             logfile.close()
@@ -146,8 +151,10 @@ class Bot(discord.Client):
         global gamechannel 
         global valid # game status
         global winnerPoints
+        global color
 
-        if reaction.message.channel == gamechannel != None and valid and reaction.message.content == startmsg: # checks if the reaction is from a valid minigame session
+        # Win Validation
+        if reaction.message.channel == gamechannel != None and valid and reaction.message.content == startmsg + react + f' {color}' + '.' and str(reaction) == emojis[color] and user != self.user: # checks if the reaction is from a valid minigame session and if it's the right emoji
             playersinfo = shelve.open('players.info', 'c', writeback=True) # db open
             # finishing the actual open game
             await gamechannel.send(winmsg1 + user.name + winmsg2)
@@ -163,6 +170,7 @@ class Bot(discord.Client):
             # point computation    
             playersinfo[f'{user.id}'].addPoint(winnerPoints)
             playersinfo.close() # db close
+            del color
 
     
     async def on_member_join(self, member):
