@@ -61,7 +61,9 @@ class Bot(discord.Client):
                         color = choice(list(emojis.keys()))
                         await gamechannel.send(file= discord.File(open(f'../Assets/monsters_memes/{choice(memes)}', 'rb')))
 
-                        await gamechannel.send(startmsg + react + f' {color}' + '.')
+                        msg = await gamechannel.send(startmsg + react + f' {color}' + '.')
+                        for emoji in emojis.values():
+                            await msg.add_reaction(emoji)
                         valid = True
                         await asyncio.sleep(gameinterval)
             except:
