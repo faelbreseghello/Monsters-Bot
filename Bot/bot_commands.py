@@ -80,6 +80,13 @@ class Bot(discord.Client):
 
 
     async def on_message(self, message):
+        # log opening
+        try:
+            logfile = open(f'{logpath}/log{datetime.datetime.now().month}-{datetime.datetime.now().year}.txt', 'a')   
+        except:
+            logfile = open(f'{logpath}/log{datetime.datetime.now().month}-{datetime.datetime.now().year}.txt', 'w')
+
+
         global gamechannel
         try:
             perm = message.author.guild_permissions # author permissions
@@ -131,6 +138,8 @@ class Bot(discord.Client):
         
         if message.content == f'{prefix}help': # help command
             await message.channel.send(helpmsg)
+
+        logfile.close()
         
         
     async def on_reaction_add(self, reaction, user):

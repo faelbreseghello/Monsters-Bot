@@ -22,11 +22,9 @@ valid = False
 end_day = 30 # The day of the end off the minigame - will verify at the start time
 
 
-# log file 
-try:
-    logfile = open(f'../logs/log{datetime.datetime.now().month}-{datetime.datetime.now().year}.txt', 'a')
-except:
-    logfile = open(f'../logs/log{datetime.datetime.now().month}-{datetime.datetime.now().year}.txt', 'w')
+# log file path 
+
+logpath = '../logs'
 
 # Language import
 if lang == 'en-us':
