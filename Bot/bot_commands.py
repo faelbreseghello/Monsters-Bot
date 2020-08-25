@@ -21,17 +21,17 @@ class Bot(discord.Client):
             if datetime.datetime.today().day == end_day:
                 # winner and reseting
                 playersinfo = shelve.open('players.info', 'c', writeback=True)
+                sorteddb = sorted(playersinfo.items(), key=lambda x: x[1].month_points, reverse=True) # Sort the playersinfo by monthly points, in the reverse order
                 allstr = 'Rank: \n'
-                for k, v in playersinfo.items(): # msg string formation and reseting points
-                    allstr += f'{self.get_user(v.id).mention}: {v.month_points} \n'
+                for player in sorteddb:
                     c += 1
-                    if c == 1:
-                        winner = deepcopy(v)
-                    elif v > winner:
-                        winner = deepcopy(v)
-                    playersinfo[k].resetmonth()
-                playersinfo.close()
+                    if c == 1: # The first one always will be the winner
+                        winner = deepcopy(player[1])
 
+                    allstr += f'{self.get_user(player[1].id).mention} : {player[1].month_points}\n'
+                    playersinfo[str(player[1].id)].resetmonth()
+
+                playersinfo.close()
                 # sending results
                 await gamechannel.send(f'The winner was {self.get_user(winner.id)}, with {winner.month_points} pts! 🎉🎉🎉🎉🎉') if lang == 'en-us' else await gamechannel.send(f'O vencedor foi {self.get_user(winner.id)}, com {winner.month_points} pts! 🎉🎉🎉🎉🎉')
                 await gamechannel.send(allstr)
@@ -76,13 +76,6 @@ class Bot(discord.Client):
         await self.change_presence(status=discord.Status.online, activity= discord.Game(choice(statusmsg)))
         valid = False # do not EDIT this
 
-
-    async def on_disconnect(self):
-        while True:
-            await self.start(Token)
-            if not self.is_closed():
-                return
-        
 
 
     async def on_message(self, message):
