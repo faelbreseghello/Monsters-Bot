@@ -72,11 +72,28 @@ class Bot(discord.Client):
 
     async def on_ready(self):
         global valid
+        # logging
+        try:
+            logfile = open(f'{logpath}/log{datetime.datetime.now().month}-{datetime.datetime.now().year}.txt', 'a')   
+        except:
+            logfile = open(f'{logpath}/log{datetime.datetime.now().month}-{datetime.datetime.now().year}.txt', 'w')
         print(f'Logged on as {self.user} at {datetime.datetime.today()}')
+        logfile.write(f'Logged on as {self.user} at {datetime.datetime.today()}\n')
+        logfile.close()
         await self.change_presence(status=discord.Status.online, activity= discord.Game(choice(statusmsg)))
         valid = False # do not EDIT this
 
 
+    async def on_resumed(self):
+        # logging
+        try:
+            logfile = open(f'{logpath}/log{datetime.datetime.now().month}-{datetime.datetime.now().year}.txt', 'a')   
+        except:
+            logfile = open(f'{logpath}/log{datetime.datetime.now().month}-{datetime.datetime.now().year}.txt', 'w')
+        
+        print(f'Reconnected at {datetime.datetime.today()}')
+        logfile.write(f'Reconnected at {datetime.datetime.today()}\n')
+        logfile.close()
 
     async def on_message(self, message):
         # log opening
