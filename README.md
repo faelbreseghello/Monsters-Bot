@@ -15,7 +15,7 @@
  
  ## Self-Hosting
  My host is on aws ec2, free tier is cabaple.
- You only need to clone it, paste your bot token to Token.txt file (create it.
- change directory to Bot folder and run main.py
+ You only need to clone it, paste your bot token to Token.txt file (create it, at Monsters-Bot root folder).
+ Change directory to Bot folder and run main.py
  Done! Now only invite it to your server and use \*help to see the commands.
  There are additional config in config.py file. Check it if you want!
