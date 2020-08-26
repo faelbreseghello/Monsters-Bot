@@ -154,7 +154,7 @@ class Bot(discord.Client):
             await message.channel.send(trakinas, file=discord.File(open('../Assets/Trakinas.jpg', 'rb')))
         
         if message.content == f'{prefix}help': # help command
-            await message.channel.send(helpmsg)
+            await message.channel.send(embed=helpmsg)
 
         logfile.close()
         

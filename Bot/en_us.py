@@ -1,3 +1,5 @@
+import discord
+
 quotes = ["That is the weirdest thing you’ve ever said.",
 
 "What can I say? The camera loves me.",
@@ -141,17 +143,20 @@ winmsg2 = ' won the challenge\n -------------------------------' # pt2
 startmsg = 'It\'s time to scare! The first to react wins!'
 mypts = 'You have '
 myptserror = 'Probably you dont started at the game yet :('
-helpmsg = """   COMMANDS
-policy: Our monstrous think way
-setup: Sets up the minigame channel. It's recommended that only me can message there
-fun: Some little monsters quotes
-meme: A random meme from our scary database🧟‍♂️🧟‍♂️
-mypts: send a dm to the message author with him points :works on dm:
-trakinas: a charity campaing
-    MINIGAME
-From time to time there's a random chance of a message appears. The first monster to react to it will win the round and earn points. At the end of every month the best will receive a prize.
-*all commands need the standard prefix *. but it could be changed
-"""
+
+#help embed
+helpmsg = discord.Embed(title='Commands:', colour = discord.Colour.blue())
+helpmsg.set_author(name='Help command')
+helpmsg.set_thumbnail(url='https://cdn.discordapp.com/avatars/747449463861149737/38b60ffd2fce04ea1e607179acf70a79.png')
+helpmsg.add_field(name='*policy', value='Our monstrous think way.', inline=True)
+helpmsg.add_field(name='*setup', value='Sets up the minigame channel. It\'s recommended that only me can message there.', inline=False)
+helpmsg.add_field(name='*fun', value='Some little monsters quotes.', inline=True)
+helpmsg.add_field(name='*meme', value='A random meme from our scary database🧟‍♂️🧟‍♂️.', inline=False)
+helpmsg.add_field(name='*mypts', value='I\'ll send you a dm with your points. :)', inline=True)
+helpmsg.add_field(name='*trakinas', value='a charity campaing.', inline=False)
+helpmsg.add_field(name='Minigame', value='From time to time there\'s a random chance of a message appears. The first monster to react to it will win the round and earn points. At the end of every month the best will receive a prize.', inline=True)
+helpmsg.set_footer(text='*all commands need the standard prefix *. but it could be changed at config.py')
+
 react = ' React with'
 trakinas = 'SUPPORT, SUPPORT TRAKINAS LEMON.🍪🍪🍪🍪🍪'
 
