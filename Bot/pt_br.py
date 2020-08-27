@@ -59,8 +59,8 @@ trakinas = 'APOIE, APOIE TRAKINAS LIMÃO.🍪🍪🍪🍪'
 winmsg1 = 'O monstro ' # pt1
 winmsg2 = ' venceu a rodada.\n -------------------------------' # pt2
 startmsg = 'Assustadores, preparem-se! Chegou a hora de assustar!\n VALENDO!'
-mypts = 'Você tem '
-myptserror = 'Provavelmente não iniciou o jogo ainda :('
+ptsmsg = 'tem'
+ptserror = 'Provavelmente não iniciou o jogo ainda :('
 
 #help embed
 helpmsg = discord.Embed(title='Comandos:', colour = discord.Colour.blue())
@@ -70,7 +70,7 @@ helpmsg.add_field(name='*policy', value='Minha forma monstruosa de pensar.', inl
 helpmsg.add_field(name='*setup', value='Definir o canal que será utilizado para o minigame. Recomenda-se que apenas o eu possa enviar mensagens por lá.', inline=False)
 helpmsg.add_field(name='*fun', value='Pequenos trechos dos monstros conversando. Quem precisa de autoajuda quando se tem monstroterapia?', inline=True)
 helpmsg.add_field(name='*meme', value='Um meme aleatório da nossa base MONSTRUOSA 🧟‍♂️🧟‍♂️.', inline=False)
-helpmsg.add_field(name='*mypts', value='Uma dm com os seus pontos do minigame.', inline=True)
+helpmsg.add_field(name='*pts', value='Uma dm com os pontos da pessoa mencionada do minigame.', inline=True)
 helpmsg.add_field(name='*trakinas', value='Campanha de caridade :100% sério:', inline=False)
 helpmsg.add_field(name='Minigame', value='De tempos em tempos há uma chance de ser enviada uma mensagem em que o primeiro monstro que reagir ganha pontos. No final do mês o melhor ganha um prêmio.', inline=True)
 helpmsg.set_footer(text='*todos os comandos, por padrão acompanham o prefixo *. Mas você pode mudar em config.py')

@@ -135,7 +135,7 @@ class Bot(discord.Client):
         if message.content == f'{prefix}meme': # memes
             await message.channel.send('LOL!', file=discord.File(open(f'../Assets/monsters_memes/{choice(memes)}', 'rb')))
         
-        if message.content == f'{prefix}mypts': # Dm message for points
+        if message.content.startswith(f'{prefix}pts'): # Dm message for points
             playersinfo = shelve.open('players.info', 'c') # db open
             # dm validation
             dm = message.author.dm_channel 
@@ -144,10 +144,15 @@ class Bot(discord.Client):
                 dm = message.author.dm_channel
             # message sending
             try:
-                await dm.send(f'{mypts}\n total:{playersinfo[str(message.author.id)].points}, {month}:{playersinfo[str(message.author.id)].month_points} pts')
+                await dm.send(f'{message.mentions[0].name} {ptsmsg}:\n total:{playersinfo[str(message.mentions[0].id)].points}, {month}:{playersinfo[str(message.mentions[0].id)].month_points} pts')
+            except IndexError:
+                try:
+                    await dm.send(f'{message.author.name} {ptsmsg}:\n total:{playersinfo[str(message.author.id)].points}, {month}:{playersinfo[str(message.author.id)].month_points} pts')
+                except:
+                    await dm.send(ptserror)
             except Exception as e:
                 print(e)
-                await dm.send(myptserror)
+                await dm.send(ptserror)
             playersinfo.close()
         
         if message.content == f'{prefix}trakinas': # Help trakinas limao

@@ -141,8 +141,8 @@ fun = 'Look at this one!:'
 winmsg1 = 'The monster ' # pt1
 winmsg2 = ' won the challenge\n -------------------------------' # pt2
 startmsg = 'It\'s time to scare! The first to react wins!'
-mypts = 'You have '
-myptserror = 'Probably you dont started at the game yet :('
+ptsmsg = 'has'
+ptserror = 'Probably doesnt started at the game yet :('
 
 #help embed
 helpmsg = discord.Embed(title='Commands:', colour = discord.Colour.blue())
@@ -152,7 +152,7 @@ helpmsg.add_field(name='*policy', value='Our monstrous think way.', inline=True)
 helpmsg.add_field(name='*setup', value='Sets up the minigame channel. It\'s recommended that only me can message there.', inline=False)
 helpmsg.add_field(name='*fun', value='Some little monsters quotes.', inline=True)
 helpmsg.add_field(name='*meme', value='A random meme from our scary database🧟‍♂️🧟‍♂️.', inline=False)
-helpmsg.add_field(name='*mypts', value='I\'ll send you a dm with your points. :)', inline=True)
+helpmsg.add_field(name='*pts', value='I\'ll send you a dm with the mentioned points. :)', inline=True)
 helpmsg.add_field(name='*trakinas', value='a charity campaing.', inline=False)
 helpmsg.add_field(name='Minigame', value='From time to time there\'s a random chance of a message appears. The first monster to react to it will win the round and earn points. At the end of every month the best will receive a prize.', inline=True)
 helpmsg.set_footer(text='*all commands need the standard prefix *. but it could be changed at config.py')
