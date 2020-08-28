@@ -16,7 +16,7 @@ banchannel = None # the channel that will be used to ban messages
 
 # Minigame setup
 gamechannel = None # You can set here or with the command "*setup"
-gameinterval = 120 #interval between the sessions #TEMP VALUE
+gameinterval = 3600 #interval between the sessions #TEMP VALUE
 winnerPoints = 3 # points for who win the minigame
 valid = False
 end_day = 30 # The day of the end off the minigame - will verify at the start time

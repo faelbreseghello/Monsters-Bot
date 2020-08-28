@@ -36,7 +36,7 @@ class Bot(discord.Client):
                 await gamechannel.send(f'The winner was {self.get_user(winner.id)}, with {winner.month_points} pts! 🎉🎉🎉🎉🎉') if lang == 'en-us' else await gamechannel.send(f'O vencedor foi {self.get_user(winner.id)}, com {winner.month_points} pts! 🎉🎉🎉🎉🎉')
                 await gamechannel.send(allstr)
                 
-            await asyncio.sleep(84500)
+            await asyncio.sleep(86400)
 
 
     async def scheduled(self):
