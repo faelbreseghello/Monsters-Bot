@@ -1,3 +1,5 @@
+import discord
+
 quotes = ["Mais nada vai sair do armário pra assustar você",
 
 "Aquela coisa é uma arma de matar! Aposto que está só esperando nós dormir, e então nhaque!",
@@ -51,25 +53,29 @@ close = 'Tchau monstros! Até mais...🧟‍♂️😞'
 policy = 'Meu compromisso é com a transparência e o código aberto, caso queira ver os registros de auditoria/log de mensagem é só ir no respectivo canal que você o verá.🧐🧐🧐 \n github repo: https://github.com/faelbreseghello/Monsters-Bot'
 setup = 'Pronto! O jogo já vai começar!'
 fun = 'Olha essa daqui!:'
+trakinas = 'APOIE, APOIE TRAKINAS LIMÃO.🍪🍪🍪🍪'
 
 # minigame msg
 winmsg1 = 'O monstro ' # pt1
 winmsg2 = ' venceu a rodada.\n -------------------------------' # pt2
 startmsg = 'Assustadores, preparem-se! Chegou a hora de assustar!\n VALENDO!'
-mypts = 'Você tem '
-myptserror = 'Provavelmente não iniciou o jogo ainda :('
-helpmsg = """   COMANDOS
-policy: Nossa forma de pensar
-setup: ADM ONLY Definir o canal que será utilizado para o minigame. Recomenda-se que apenas o bot possa enviar mensagens por ali
-fun: Pequenos trechos dos monstros conversando. Quem precisa de autoajuda quando se tem monstroterapia
-meme: Um meme aleatório da nossa base MONSTRUOSA 🧟‍♂️🧟‍♂️
-mypts: Uma dm com os seus pontos do minigame :funciona na dm tmb:
-trakinas: Campanha de caridade :100% sério:
-    MINIGAME
-De tempos em tempos há uma chance de ser enviada uma mensagem em que o primeiro monstro que reagir ganha pontos. No final do mês o melhor ganha um super BONUS
-*todos os comandos, por padrão acompanham o prefixo *. Ex: *setup
-"""
-trakinas = 'APOIE, APOIE TRAKINAS LIMÃO.🍪🍪🍪🍪'
+ptsmsg = 'tem'
+ptserror = 'Provavelmente não iniciou o jogo ainda :('
+
+#help embed
+helpmsg = discord.Embed(title='Comandos:', colour = discord.Colour.blue())
+helpmsg.set_author(name='Ajuda')
+helpmsg.set_thumbnail(url='https://cdn.discordapp.com/avatars/747449463861149737/38b60ffd2fce04ea1e607179acf70a79.png')
+helpmsg.add_field(name='*policy', value='Minha forma monstruosa de pensar.', inline=True)
+helpmsg.add_field(name='*setup', value='Definir o canal que será utilizado para o minigame. Recomenda-se que apenas o eu possa enviar mensagens por lá.', inline=False)
+helpmsg.add_field(name='*fun', value='Pequenos trechos dos monstros conversando. Quem precisa de autoajuda quando se tem monstroterapia?', inline=True)
+helpmsg.add_field(name='*meme', value='Um meme aleatório da nossa base MONSTRUOSA 🧟‍♂️🧟‍♂️.', inline=False)
+helpmsg.add_field(name='*pts', value='Uma dm com os pontos da pessoa mencionada do minigame.', inline=True)
+helpmsg.add_field(name='*trakinas', value='Campanha de caridade :100% sério:', inline=False)
+helpmsg.add_field(name='Minigame', value='De tempos em tempos há uma chance de ser enviada uma mensagem em que o primeiro monstro que reagir ganha pontos. No final do mês o melhor ganha um prêmio.', inline=True)
+helpmsg.set_footer(text='*todos os comandos, por padrão acompanham o prefixo *. Mas você pode mudar em config.py')
+
+react = ' Reaja com'
 
 # other
 statusmsg = ['Feito com ❤️ por faelbreseghello#3092', 'Me siga no twitter: @faelbreseghello', 'Meu código é aberto!', 'Veja os comandos com *help...']
