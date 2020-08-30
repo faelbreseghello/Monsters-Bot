@@ -27,8 +27,10 @@ class Bot(discord.Client):
                     c += 1
                     if c == 1: # The first one always will be the winner
                         winner = deepcopy(player[1])
-
-                    allstr += f'{self.get_user(player[1].id).mention} : {player[1].month_points}\n'
+                    try:
+                        allstr += f'{self.get_user(player[1].id).mention} : {player[1].month_points}\n'
+                    except:
+                        pass
                     playersinfo[str(player[1].id)].resetmonth()
 
                 playersinfo.close()
