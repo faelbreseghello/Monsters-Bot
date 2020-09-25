@@ -166,10 +166,11 @@ class Bot(discord.Client):
 
         if message.content == f'{prefix}cringegif': # random trending gif
             response = requests.get(f'https://api.tenor.com/v1/trending?key=3XHLX8TSY37T') 
-            response = json.loads(response.text) # load the json
             if response.status_code != 200 or 202:
                 await message.channel.send(giferror)
                 return
+            response = json.loads(response.text) # load the json
+
             # select the right key
             response = response["results"] 
             gif = choice(response)
