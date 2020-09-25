@@ -81,3 +81,4 @@ react = ' Reaja com'
 statusmsg = ['Feito com ❤️ por faelbreseghello#3092', 'Me siga no twitter: @faelbreseghello', 'Meu código é aberto!', 'Veja os comandos com *help...']
 welcomemsg = 'Bem vindo ao server, eu sou o Monsters Bot. Se quiser saber mais sobre mim acesse meu repositorio no github : https://github.com/faelbreseghello/Monsters-Bot.\n As regras do minigame são simples: Seja o primeiro assustador e ganhe pontos. Depois tente ser o melhor de todos! 🧟‍♂️🧟‍♂️🧟‍♂️🧟‍♂️'
 month = 'mês'
+giferror = 'Algo deu errado :('

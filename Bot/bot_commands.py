@@ -1,12 +1,13 @@
 import discord
 import asyncio
 import datetime
-from profiles import Profile
+import requests
 import shelve
+import json
+from profiles import Profile
 from copy import deepcopy
 from config import *
 from random import randint, choice
-
 
 class Bot(discord.Client):
 
@@ -162,6 +163,20 @@ class Bot(discord.Client):
         
         if message.content == f'{prefix}help': # help command
             await message.channel.send(embed=helpmsg)
+
+        if message.content == f'{prefix}cringegif': # random trending gif
+            response = requests.get(f'https://api.tenor.com/v1/trending?key=3XHLX8TSY37T') 
+            response = json.loads(response.text) # load the json
+            if response.status_code != 200 or 202:
+                await message.channel.send(giferror)
+                return
+            # select the right key
+            response = response["results"] 
+            gif = choice(response)
+            gif_format = gif["media"][0]["gif"]
+            gif_url = gif_format["url"]
+
+            await message.channel.send(gif_url) # sending
 
         logfile.close()
         
