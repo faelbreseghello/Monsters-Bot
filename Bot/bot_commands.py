@@ -140,22 +140,17 @@ class Bot(discord.Client):
         
         if message.content.startswith(f'{prefix}pts'): # Dm message for points
             playersinfo = shelve.open('players.info', 'c') # db open
-            # dm validation
-            dm = message.author.dm_channel 
-            if dm == None:
-                await message.author.create_dm()
-                dm = message.author.dm_channel
             # message sending
             try:
-                await dm.send(f'{message.mentions[0].name} {ptsmsg}:\n total:{playersinfo[str(message.mentions[0].id)].points}, {month}:{playersinfo[str(message.mentions[0].id)].month_points} pts')
+                await message.channel.send(f'{message.mentions[0].name} {ptsmsg}:\n total:{playersinfo[str(message.mentions[0].id)].points}, {month}:{playersinfo[str(message.mentions[0].id)].month_points} pts')
             except IndexError:
                 try:
-                    await dm.send(f'{message.author.name} {ptsmsg}:\n total:{playersinfo[str(message.author.id)].points}, {month}:{playersinfo[str(message.author.id)].month_points} pts')
+                    await message.channel.send(f'{message.author.name} {ptsmsg}:\n total:{playersinfo[str(message.author.id)].points}, {month}:{playersinfo[str(message.author.id)].month_points} pts')
                 except:
-                    await dm.send(ptserror)
+                    await message.channel.send(ptserror)
             except Exception as e:
                 print(e)
-                await dm.send(ptserror)
+                await message.channel.send(ptserror)
             playersinfo.close()
         
         if message.content == f'{prefix}trakinas': # Help trakinas limao
@@ -192,6 +187,7 @@ class Bot(discord.Client):
                 except:
                     pass
             await message.channel.send(rank) # rank sending
+            playersinfo.close()
 
         logfile.close()
         
