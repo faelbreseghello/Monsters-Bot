@@ -180,6 +180,18 @@ class Bot(discord.Client):
             gif_url = gif_format["url"]
 
             await message.channel.send(gif_url) # sending
+        
+        if message.content == f'{prefix}rank': # all time rank
+            playersinfo = shelve.open('players.info', 'c', writeback=True)
+            sorteddb = sorted(playersinfo.items(), key=lambda x: x[1].points, reverse=True) # db sorting
+            rank = 'All time rank:\n'
+            # string formulation
+            for player in sorteddb:
+                try:
+                    rank += f'{self.get_user(player[1].id).name} : {player[1].points}\n'
+                except:
+                    pass
+            await message.channel.send(rank) # rank sending
 
         logfile.close()
         
