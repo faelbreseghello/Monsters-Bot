@@ -8,7 +8,7 @@ Token = Token.read()
 
 prefix = '*' # the command prefix
 
-lang = 'en-us' # 'en-us' or 'pt-br'
+lang = 'pt-br' # 'en-us' or 'pt-br'
 
 memes = os.listdir('../Assets/monsters_memes') # memes db load
 
