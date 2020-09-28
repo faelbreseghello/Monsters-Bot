@@ -61,6 +61,10 @@ winmsg2 = ' venceu a rodada.\n -------------------------------' # pt2
 startmsg = 'Assustadores, preparem-se! Chegou a hora de assustar!\n VALENDO!'
 ptsmsg = 'tem'
 ptserror = 'Provavelmente não iniciou o jogo ainda :('
+emojis = {'vermelho': '🔴',
+          'verde' : '🟢',
+          'azul' : '🔵',
+          'amarelo' : '🟡'}
 
 #help embed
 helpmsg = discord.Embed(title='Comandos:', colour = discord.Colour.blue())

@@ -143,6 +143,10 @@ winmsg2 = ' won the challenge\n -------------------------------' # pt2
 startmsg = 'It\'s time to scare! The first to react wins!'
 ptsmsg = 'has'
 ptserror = 'Probably doesnt started at the game yet :('
+emojis = {'red': '🔴',
+          'green' : '🟢',
+          'blue' : '🔵',
+          'yellow' : '🟡'}
 
 #help embed
 helpmsg = discord.Embed(title='Commands:', colour = discord.Colour.blue())
