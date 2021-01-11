@@ -10,28 +10,32 @@ from config import *
 from random import randint, choice
 
 class Bot(discord.Client):
-
-
     async def monthly(self):
         global gamechannel
         c = 0
+        
         while True:
             while gamechannel == None:
                 await asyncio.sleep(10)
+                
             # monthly result
             if datetime.datetime.today().day == end_day:
                 # winner and reseting
                 playersinfo = shelve.open('players.info', 'c', writeback=True)
                 sorteddb = sorted(playersinfo.items(), key=lambda x: x[1].month_points, reverse=True) # Sort the playersinfo by monthly points, in the reverse order
                 allstr = 'Rank: \n'
+                
                 for player in sorteddb:
                     c += 1
                     if c == 1: # The first one always will be the winner
                         winner = deepcopy(player[1])
+                        
                     try:
                         allstr += f'{self.get_user(player[1].id).mention} : {player[1].month_points}\n'
+                        
                     except:
                         pass
+                    
                     playersinfo[str(player[1].id)].resetmonth()
 
                 playersinfo.close()
@@ -40,7 +44,6 @@ class Bot(discord.Client):
                 await gamechannel.send(allstr)
                 
             await asyncio.sleep(86400)
-
 
     async def scheduled(self):
         global gamechannel # The Minigame channel
@@ -53,44 +56,54 @@ class Bot(discord.Client):
             try:
                 if gamechannel == None:
                     await asyncio.sleep(10)
+                    
                 else:
                     await self.change_presence(status=discord.Status.online, activity= discord.Game(choice(statusmsg)))
+                    
                     chance = randint(0,5)
                     print(chance)
+                    
                     if valid or chance != 1:
                         await asyncio.sleep(gameinterval) # if the game keeps valid or not choosen
+                        
                     else:
-                    # Minigame 
+                        # Minigame 
                         color = choice(list(emojis.keys()))
                         await gamechannel.send(file= discord.File(open(f'../Assets/monsters_memes/{choice(memes)}', 'rb')))
-
                         msg = await gamechannel.send(startmsg + react + f' {color}' + '.')
+                        
                         for emoji in emojis.values():
                             await msg.add_reaction(emoji)
+                            
                         valid = True
                         await asyncio.sleep(gameinterval)
+                        
             except:
                 pass
 
-
     async def on_ready(self):
         global valid
+        
         # logging
         try:
-            logfile = open(f'{logpath}/log{datetime.datetime.now().month}-{datetime.datetime.now().year}.txt', 'a')   
+            logfile = open(f'{logpath}/log{datetime.datetime.now().month}-{datetime.datetime.now().year}.txt', 'a')
+            
         except:
             logfile = open(f'{logpath}/log{datetime.datetime.now().month}-{datetime.datetime.now().year}.txt', 'w')
+            
         print(f'Logged on as {self.user} at {datetime.datetime.today()}')
         logfile.write(f'Logged on as {self.user} at {datetime.datetime.today()}\n')
         logfile.close()
+        
         await self.change_presence(status=discord.Status.online, activity= discord.Game(choice(statusmsg)))
         valid = False # do not EDIT this
 
-
     async def on_resumed(self):
+        
         # logging
         try:
             logfile = open(f'{logpath}/log{datetime.datetime.now().month}-{datetime.datetime.now().year}.txt', 'a')   
+            
         except:
             logfile = open(f'{logpath}/log{datetime.datetime.now().month}-{datetime.datetime.now().year}.txt', 'w')
         
@@ -99,16 +112,19 @@ class Bot(discord.Client):
         logfile.close()
 
     async def on_message(self, message):
+        
         # log opening
         try:
-            logfile = open(f'{logpath}/log{datetime.datetime.now().month}-{datetime.datetime.now().year}.txt', 'a')   
+            logfile = open(f'{logpath}/log{datetime.datetime.now().month}-{datetime.datetime.now().year}.txt', 'a')
+            
         except:
             logfile = open(f'{logpath}/log{datetime.datetime.now().month}-{datetime.datetime.now().year}.txt', 'w')
 
-
         global gamechannel
+        
         try:
             perm = message.author.guild_permissions # author permissions
+            
         except:
             pass
         
@@ -121,13 +137,14 @@ class Bot(discord.Client):
         if message.content == f'{prefix}close' and perm.administrator: # close command - end the bot process (only for admins)
             await message.channel.send(close)
             logfile.close()
+            
             await self.close()
             exit()
 
         if message.content == f'{prefix}policy': # policy command - our think way
             await message.channel.send(policy)
 
-        if message.content == f'{prefix}setup' and  perm.administrator: # sets up the minigame - the channel will be where this command was sent
+        if message.content == f'{prefix}setup' and perm.administrator: # sets up the minigame - the channel will be where this command was sent
             gamechannel = message.channel
             await message.channel.send(setup)
 
@@ -140,17 +157,22 @@ class Bot(discord.Client):
         
         if message.content.startswith(f'{prefix}pts'): # Dm message for points
             playersinfo = shelve.open('players.info', 'c') # db open
+            
             # message sending
             try:
                 await message.channel.send(f'{message.mentions[0].name} {ptsmsg}:\n total:{playersinfo[str(message.mentions[0].id)].points}, {month}:{playersinfo[str(message.mentions[0].id)].month_points} pts')
+            
             except IndexError:
                 try:
                     await message.channel.send(f'{message.author.name} {ptsmsg}:\n total:{playersinfo[str(message.author.id)].points}, {month}:{playersinfo[str(message.author.id)].month_points} pts')
+                
                 except:
                     await message.channel.send(ptserror)
+                    
             except Exception as e:
                 print(e)
                 await message.channel.send(ptserror)
+                
             playersinfo.close()
         
         if message.content == f'{prefix}trakinas': # Help trakinas limao
@@ -161,11 +183,14 @@ class Bot(discord.Client):
 
         if message.content == f'{prefix}cringegif': # random trending gif
             response = requests.get(f'https://api.tenor.com/v1/trending?key=3XHLX8TSY37T') 
+            
             if response.status_code == 200 or 202:
                 pass
+            
             else:
                 await message.channel.send(giferror)
                 return
+            
             response = json.loads(response.text) # load the json
 
             # select the right key
@@ -180,17 +205,19 @@ class Bot(discord.Client):
             playersinfo = shelve.open('players.info', 'c', writeback=True)
             sorteddb = sorted(playersinfo.items(), key=lambda x: x[1].points, reverse=True) # db sorting
             rank = 'All time rank:\n'
+            
             # string formulation
             for player in sorteddb:
                 try:
                     rank += f'{self.get_user(player[1].id).name} : {player[1].points}\n'
+                    
                 except:
                     pass
+                
             await message.channel.send(rank) # rank sending
             playersinfo.close()
 
         logfile.close()
-        
         
     async def on_reaction_add(self, reaction, user):
         global gamechannel 
@@ -201,6 +228,7 @@ class Bot(discord.Client):
         # Win Validation
         if reaction.message.channel == gamechannel != None and valid and reaction.message.content == startmsg + react + f' {color}' + '.' and str(reaction) == emojis[color] and user != self.user: # checks if the reaction is from a valid minigame session and if it's the right emoji
             playersinfo = shelve.open('players.info', 'c', writeback=True) # db open
+            
             # finishing the actual open game
             await gamechannel.send(winmsg1 + user.name + winmsg2)
             valid = False
@@ -209,6 +237,7 @@ class Bot(discord.Client):
             try:
                 data = playersinfo[f'{user.id}']
                 del data
+                
             except:
                 playersinfo[f'{user.id}'] = Profile(user.id)
 
@@ -217,20 +246,21 @@ class Bot(discord.Client):
             playersinfo.close() # db close
             del color
 
-    
     async def on_member_join(self, member):
         # Welcome msg
         dm = member.dm_channel # dm verification
+        
         if dm == None:
             # dm creation
             await member.create_dm()
             dm = member.dm_channel
+            
         # msg sending
         await dm.send(welcomemsg)
     
-    
     async def on_member_ban(self, guild, user): # ban message        
         channels = guild.channels
+        
         for channel in channels:
             if str(channel) == banchannel:
                 await channel.send(file=discord.File(open('../Assets/ban.gif', 'rb')))
