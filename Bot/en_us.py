@@ -129,13 +129,11 @@ quotes = ["That is the weirdest thing you’ve ever said.",
 """- Mike: I'm telling you, Big Daddy. You're gonna be seeing this face on TV more often.
 - Sulley: Yeah, like on "Monstropolis' Most Wanted?"""]
 
-
 # var name == command name
 close = 'Bye monsters! See you soon...🧟‍♂️😞'
 policy = "I'm a transparent and open source bot, so at the end of every month, search for the transparency channels and see the audit logs and messages logs.🧐🧐🧐 \n github repo: https://github.com/faelbreseghello/Monsters-Bot"
 setup = 'Set up! The game is close to start!'
 fun = 'Look at this one!:'
-
 
 # minigame msg
 winmsg1 = 'The monster ' # pt1

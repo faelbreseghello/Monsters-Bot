@@ -1,7 +1,6 @@
 import discord
 
 class Profile():
-
     def __init__(self, user : int): # Creates a profile object, that stores users info about the minigame
         self.id = user # discord user id
         self.points = 0 # total points  
@@ -22,4 +21,3 @@ class Profile():
     
     def __lt__(self, other):
         return self.month_points < other.month_points
-        

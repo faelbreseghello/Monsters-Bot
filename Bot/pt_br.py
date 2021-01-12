@@ -80,7 +80,6 @@ helpmsg.add_field(name='*rank', value='O ranking geral do minigame.', inline=Tru
 helpmsg.add_field(name='*cringegif', value='Apenas um gif popular aletório.', inline=False)
 helpmsg.add_field(name='Minigame', value='De tempos em tempos há uma chance de ser enviada uma mensagem em que o primeiro monstro que reagir ganha pontos. No final do mês o melhor ganha um prêmio.', inline=True)
 helpmsg.set_footer(text='*todos os comandos, por padrão acompanham o prefixo *. Mas você pode mudar em config.py')
-
 react = ' Reaja com'
 
 # other
