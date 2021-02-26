@@ -2,7 +2,7 @@
 ![logo](https://cdn.discordapp.com/avatars/732279511663771719/38b60ffd2fce04ea1e607179acf70a79.png?size=128)
 
 A simple Monsters Inc. Discord bot made by `faelbreseghello#3092`.
-This bot is developed for my Monsters Inc. server. *[Click here to join](https://discord.gg/ZgSayUW).*
+This bot is developed for my Monsters Inc. server.
 <br>
 You can't add it to your server with an invite, but if you want to host it by yourself you can without any problem! Scroll down to see how!
  
